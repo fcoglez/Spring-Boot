@@ -1,9 +1,15 @@
 package com.course.springboot.webapp.controllers;
 
+import com.course.springboot.webapp.models.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 
@@ -21,10 +27,37 @@ public class HtmlController {
 
     //para pasar datos a la vista con Map details en este caso
     @GetMapping("/details/map")
-    public String details(Map<String, String> model){
+    public String detailsMap(Map<String, String> model){
         model.put( "title","Hola mundo spring boot");
         model.put( "name","Francisco");
         model.put( "type","map");
         return "details";
+    }
+
+    //para pasar datos a la vista con el objeto User details en este caso
+    @GetMapping("/details/user")
+    public String detailsUser(Map<String, Object> model){
+        User user = new User("Francisco", "González");
+        //user.setEmail("123@gmail.com");
+
+        model.put( "title","Hola mundo spring boot");
+        model.put( "user", user);
+
+        return "details";
+    }
+
+    @GetMapping("/details/user/list")
+    public String userList(ModelMap model){
+        model.addAttribute("title", "Lista de usuarios!");
+        return "list";
+    }
+
+    @ModelAttribute("users")
+    public List<User> userList(){
+        return Arrays.asList(
+                new User("Maria", "Roman", "1234@gmail.com"),
+                new User("Francisco", "Jiménez"),
+                new User("Sergio", "Hontoria", "shglp@hotmail.com"),
+                new User("Juan", "Galvez"));
     }
 }

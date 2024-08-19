@@ -9,7 +9,15 @@
 </head>
 <body>
 
-    <h1 th:text="${name} + ' ' + ${type}"></h1>
+    <h1 th:text="${title}"></h1>
+    <!--    <h1 th:text="${name} + ' ' + ${type}"></h1>-->
+
+    <!--    con el objeto User-->
+    <h1 th:text="${user.name} + ' ' + ${user.surname}"></h1>
+
+
+    <h1 th:if="${user.email}" th:text="${user.email}"></h1>
+    <h1 th:if="${user.email == null}" th:text="'no tiene email'"></h1>
 
 
 </body>
