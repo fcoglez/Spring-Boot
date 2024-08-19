@@ -43,3 +43,20 @@ es una herramienta útil para trasladar datos entre las capas de una aplicación
 
 -  @ModelAttribute -> se utiliza para trabajar con datos en los controladores de Spring MVC. Su propósito principal es simplificar la interacción con los datos que se envían y reciben en las solicitudes web
    ![imagen mvc](src/main/resources/img/modelattribute.PNG)
+
+
+- @RequestParam -> captura las variables de la URL y las hace accesibles dentro del código del controlador.
+  ![imagen mvc](src/main/resources/img/params.PNG)
+
+    Si queremos vararias variables:
+
+    ![imagen mvc](src/main/resources/img/params2.PNG)
+
+    Y para pasar variables rapidamente, usamos la inyención de dependencia `HttpServletRequest`. Esto lo que permite interactuar con los detalles de la solicitud HTTP que llega al servidor y obtener toda la información que envía el cliente mediante la url.
+    
+    ![imagen mvc](src/main/resources/img/params3.PNG)       
+
+
+- @PathVariable -> se usa para capturar parametros de la url.
+
+![imagen mvc](src/main/resources/img/params4.PNG) 
