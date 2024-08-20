@@ -7,7 +7,6 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +34,7 @@ public class HtmlController {
     }
 
     //para pasar datos a la vista con el objeto User details en este caso
-    @GetMapping("/details/user")
+    @GetMapping("/detail")
     public String detailsUser(Map<String, Object> model){
         User user = new User("Francisco", "González");
         //user.setEmail("123@gmail.com");
@@ -46,7 +45,7 @@ public class HtmlController {
         return "details";
     }
 
-    @GetMapping("/details/user/list")
+    @GetMapping("list")
     public String userList(ModelMap model){
         model.addAttribute("title", "Lista de usuarios!");
         return "list";
