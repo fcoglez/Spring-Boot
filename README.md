@@ -89,7 +89,7 @@ Y el uso de enviroment seria:
 - @RequestMapping -> puedes usar `@RequestMapping` para mapear solicitudes HTTP a métodos específicos en un controlador, lo que proporciona flexibilidad para manejar diferentes tipos de solicitudes y rutas en tu aplicación.
 
 
--  @ModelAttribute -> se utiliza para trabajar con datos en los controladores de Spring MVC. Su propósito principal es simplificar la interacción con los datos que se envían y reciben en las solicitudes web
+- @ModelAttribute -> se utiliza para trabajar con datos en los controladores de Spring MVC. Su propósito principal es simplificar la interacción con los datos que se envían y reciben en las solicitudes web
    ![imagen mvc](src/main/resources/img/modelattribute.PNG)
 
 
@@ -108,3 +108,11 @@ Y el uso de enviroment seria:
 - @PathVariable -> se usa para capturar parametros de la url.
 
 ![imagen mvc](src/main/resources/img/params4.PNG) 
+
+- @PostConstruct ->  marca un método para ser ejecutado después de que el bean ha sido construido y todas las dependencias han sido inyectadas, proporcionando una oportunidad para realizar tareas de inicialización adicionales en el bean antes de que sea utilizado.
+
+![imagen mvc](src/main/resources/img/postContruct.PNG) 
+
+- @PreDestroy -> se usa para marcar un método que debe ser ejecutado antes de que el bean sea destruido. Esto proporciona un mecanismo para liberar recursos y realizar tareas de limpieza finales, asegurando que el bean sea eliminado de manera ordenada y sin dejar recursos abiertos o sin liberar.
+
+![imagen mvc](src/main/resources/img/destroy.PNG) 
